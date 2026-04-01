@@ -1,4 +1,4 @@
-package net.melonrock.tutorialmod;
+package net.melonrock.flaregun;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -12,13 +12,13 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(TutorialMod.MODID)
-public class TutorialMod
+@Mod(FlaregunMod.MODID)
+public class FlaregunMod
 {
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "tutorialmod";
+    public static final String MODID = "flaregun";
 
-    public TutorialMod(FMLJavaModLoadingContext context)
+    public FlaregunMod(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
 
