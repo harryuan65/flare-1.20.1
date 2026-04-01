@@ -1,0 +1,12 @@
+{
+  "flaregun/fire": {
+    "sounds": [
+      { "name": "flaregun:flaregun/fire", "volume": 1.0, "pitch": 1.0 }
+    ]
+  },
+  "flaregun/reload": {
+    "sounds": [
+      { "name": "flaregun:flaregun/reload", "volume": 0.8, "pitch": 1.0 }
+    ]
+  }
+}

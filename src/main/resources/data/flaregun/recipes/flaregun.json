@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "IRI",
+    "WFW"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "W": {
+      "tag": "minecraft:planks"
+    },
+    "F": {
+      "item": "minecraft:flint_and_steel"
+    }
+  },
+  "result": {
+    "item": "flaregun:flaregun",
+    "count": 1
+  }
+}

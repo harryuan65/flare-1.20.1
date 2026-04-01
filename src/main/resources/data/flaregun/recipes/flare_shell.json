@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "minecraft:torch"
+    },
+    {
+      "item": "minecraft:gunpowder"
+    }
+  ],
+  "result": {
+    "item": "flaregun:flare_shell",
+    "count": 8
+  }
+}
