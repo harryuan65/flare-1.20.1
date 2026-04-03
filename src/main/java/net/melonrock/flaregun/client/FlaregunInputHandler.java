@@ -106,9 +106,9 @@ public class FlaregunInputHandler {
 
     private static boolean hasShellInInventory(LocalPlayer player) {
         for (ItemStack s : player.getInventory().items) {
-            if (!s.isEmpty() && s.getItem() == ModItems.FLARE_SHELL.get()) return true;
+            if (!s.isEmpty() && s.getItem() == ModItems.ILLUMINATION_FLARE.get()) return true;
         }
         ItemStack off = player.getInventory().offhand.get(0);
-        return !off.isEmpty() && off.getItem() == ModItems.FLARE_SHELL.get();
+        return !off.isEmpty() && off.getItem() == ModItems.ILLUMINATION_FLARE.get();
     }
 }

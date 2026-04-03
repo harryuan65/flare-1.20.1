@@ -59,10 +59,10 @@ public class FlaregunReloadC2SPacket {
 
     private static ItemStack findShell(ServerPlayer player) {
         for (ItemStack s : player.getInventory().items) {
-            if (!s.isEmpty() && s.getItem() == ModItems.FLARE_SHELL.get()) return s;
+            if (!s.isEmpty() && s.getItem() == ModItems.ILLUMINATION_FLARE.get()) return s;
         }
         ItemStack off = player.getInventory().offhand.get(0);
-        if (!off.isEmpty() && off.getItem() == ModItems.FLARE_SHELL.get()) return off;
+        if (!off.isEmpty() && off.getItem() == ModItems.ILLUMINATION_FLARE.get()) return off;
         return null;
     }
 }

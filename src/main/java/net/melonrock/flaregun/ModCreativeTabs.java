@@ -18,7 +18,7 @@ public class ModCreativeTabs {
                     .icon(() -> new ItemStack(ModItems.FLAREGUN.get()))
                     .displayItems((params, output) -> {
                         output.accept(ModItems.FLAREGUN.get());
-                        output.accept(ModItems.FLARE_SHELL.get());
+                        output.accept(ModItems.ILLUMINATION_FLARE.get());
                     })
                     .build());
 }

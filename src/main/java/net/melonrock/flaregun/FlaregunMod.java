@@ -1,6 +1,6 @@
 package net.melonrock.flaregun;
 
-import net.melonrock.flaregun.client.FlareEntityRenderer;
+import net.melonrock.flaregun.client.IlluminationFlareEntityRenderer;
 import net.melonrock.flaregun.client.ModKeyBindings;
 import net.melonrock.flaregun.network.ModMessages;
 import net.minecraftforge.api.distmarker.Dist;
@@ -45,7 +45,7 @@ public class FlaregunMod {
 
         @SubscribeEvent
         public static void onRegisterEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-            event.registerEntityRenderer(ModEntities.FLARE.get(), FlareEntityRenderer::new);
+            event.registerEntityRenderer(ModEntities.ILLUMINATION_FLARE.get(), IlluminationFlareEntityRenderer::new);
         }
 
         @SubscribeEvent

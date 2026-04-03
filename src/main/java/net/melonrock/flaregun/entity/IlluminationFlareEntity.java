@@ -25,16 +25,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 信號彈拋射物。
+ * 照明彈拋射物。
  * <ul>
  *   <li>飛行 0.5s（10 tick）：受重力，ray-cast 偵測方塊碰撞，穿過生物（傷害 20 + 擊退 + 點火）。</li>
  *   <li>停滯 20s（400 tick）：不動，產生 LAVA / FLAME particle。</li>
- *   <li>停滯時以 Flare 為中心放置 3×3×3（間距 8 格）共 27 個 minecraft:light 15。</li>
+ *   <li>停滯時以照明彈為中心放置 3×3×3（間距 8 格）共 27 個 minecraft:light 15。</li>
  *   <li>若網格位置在方塊內，沿射線從目標回退至最近可放置表面。</li>
  *   <li>停滯結束後消失，移除所有 light block。</li>
  * </ul>
  */
-public class FlareEntity extends Entity {
+public class IlluminationFlareEntity extends Entity {
 
     private static final double GRAVITY           = 0.04;
     private static final int    FLIGHT_TICKS      = 10;   // 0.5s
@@ -54,14 +54,14 @@ public class FlareEntity extends Entity {
     /** 發射者，用於排除自傷。 */
     @Nullable private LivingEntity owner = null;
 
-    public FlareEntity(EntityType<?> type, Level level) {
+    public IlluminationFlareEntity(EntityType<?> type, Level level) {
         super(type, level);
         this.noCulling = true;
     }
 
     /** 工廠方法，由伺服端封包呼叫。 */
-    public static FlareEntity create(Level level, LivingEntity owner, Vec3 start, Vec3 direction) {
-        FlareEntity e = new FlareEntity(ModEntities.FLARE.get(), level);
+    public static IlluminationFlareEntity create(Level level, LivingEntity owner, Vec3 start, Vec3 direction) {
+        IlluminationFlareEntity e = new IlluminationFlareEntity(ModEntities.ILLUMINATION_FLARE.get(), level);
         e.owner = owner;
         e.setPos(start.x, start.y, start.z);
         e.setDeltaMovement(direction.normalize().scale(3.0));
@@ -197,7 +197,7 @@ public class FlareEntity extends Entity {
         setDeltaMovement(Vec3.ZERO);
         lightPositions.clear();
 
-        // 以 Flare 所在方塊為中心，若在方塊內則往上退一格
+        // 以照明彈所在方塊為中心，若在方塊內則往上退一格
         BlockPos base = blockPosition();
         if (!isReplaceable(base)) base = base.above();
 

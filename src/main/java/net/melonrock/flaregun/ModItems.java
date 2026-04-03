@@ -1,7 +1,7 @@
 package net.melonrock.flaregun;
 
 import net.melonrock.flaregun.item.FlaregunItem;
-import net.melonrock.flaregun.item.FlareShellItem;
+import net.melonrock.flaregun.item.IlluminationFlareItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -15,6 +15,6 @@ public class ModItems {
     public static final RegistryObject<Item> FLAREGUN = ITEMS.register("flaregun",
             () -> new FlaregunItem(new Item.Properties().stacksTo(1)));
 
-    public static final RegistryObject<Item> FLARE_SHELL = ITEMS.register("flare_shell",
-            () -> new FlareShellItem(new Item.Properties().stacksTo(64)));
+    public static final RegistryObject<Item> ILLUMINATION_FLARE = ITEMS.register("illumination_flare",
+            () -> new IlluminationFlareItem(new Item.Properties().stacksTo(64)));
 }

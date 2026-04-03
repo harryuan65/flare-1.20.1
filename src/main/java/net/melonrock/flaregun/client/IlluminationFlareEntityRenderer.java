@@ -2,7 +2,7 @@ package net.melonrock.flaregun.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.melonrock.flaregun.entity.FlareEntity;
+import net.melonrock.flaregun.entity.IlluminationFlareEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -13,21 +13,21 @@ import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
 
 /**
- * 信號彈渲染：小彩色方塊（#E09D38），邊長 0.2，全亮度。
+ * 照明彈渲染：小彩色方塊（#E09D38），邊長 0.2，全亮度。
  */
-public class FlareEntityRenderer extends EntityRenderer<FlareEntity> {
+public class IlluminationFlareEntityRenderer extends EntityRenderer<IlluminationFlareEntity> {
 
-    public FlareEntityRenderer(EntityRendererProvider.Context ctx) {
+    public IlluminationFlareEntityRenderer(EntityRendererProvider.Context ctx) {
         super(ctx);
     }
 
     @Override
-    protected int getBlockLightLevel(FlareEntity entity, BlockPos pos) {
+    protected int getBlockLightLevel(IlluminationFlareEntity entity, BlockPos pos) {
         return 15;
     }
 
     @Override
-    public void render(FlareEntity entity, float entityYaw, float partialTick,
+    public void render(IlluminationFlareEntity entity, float entityYaw, float partialTick,
                        PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
         poseStack.pushPose();
 
@@ -56,12 +56,12 @@ public class FlareEntityRenderer extends EntityRenderer<FlareEntity> {
         vc.vertex(m, -h, -h,  h).color(r, g, b, a).endVertex();
         vc.vertex(m, -h,  h,  h).color(r, g, b, a).endVertex();
         vc.vertex(m, -h,  h, -h).color(r, g, b, a).endVertex();
-        // +Z (south) — CCW from +Z  ✓ (was already correct)
+        // +Z (south) — CCW from +Z
         vc.vertex(m, -h, -h,  h).color(r, g, b, a).endVertex();
         vc.vertex(m,  h, -h,  h).color(r, g, b, a).endVertex();
         vc.vertex(m,  h,  h,  h).color(r, g, b, a).endVertex();
         vc.vertex(m, -h,  h,  h).color(r, g, b, a).endVertex();
-        // -Z (north) — CCW from -Z  ✓ (was already correct)
+        // -Z (north) — CCW from -Z
         vc.vertex(m,  h, -h, -h).color(r, g, b, a).endVertex();
         vc.vertex(m, -h, -h, -h).color(r, g, b, a).endVertex();
         vc.vertex(m, -h,  h, -h).color(r, g, b, a).endVertex();
@@ -73,7 +73,7 @@ public class FlareEntityRenderer extends EntityRenderer<FlareEntity> {
 
     @Override
     @SuppressWarnings("deprecation")
-    public ResourceLocation getTextureLocation(FlareEntity entity) {
+    public ResourceLocation getTextureLocation(IlluminationFlareEntity entity) {
         return TextureAtlas.LOCATION_BLOCKS;
     }
 }

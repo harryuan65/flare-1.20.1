@@ -2,7 +2,7 @@ package net.melonrock.flaregun.network;
 
 import net.melonrock.flaregun.ModItems;
 import net.melonrock.flaregun.ModSounds;
-import net.melonrock.flaregun.entity.FlareEntity;
+import net.melonrock.flaregun.entity.IlluminationFlareEntity;
 import net.melonrock.flaregun.item.FlaregunItem;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
@@ -48,7 +48,7 @@ public class FlaregunFireC2SPacket {
             Vec3 eye = player.getEyePosition(1f);
             Vec3 dir = player.getLookAngle();
             Vec3 start = eye.add(dir.scale(0.5));
-            FlareEntity flare = FlareEntity.create(player.level(), player, start, dir);
+            IlluminationFlareEntity flare = IlluminationFlareEntity.create(player.level(), player, start, dir);
             player.level().addFreshEntity(flare);
 
             // 播放發射音效
